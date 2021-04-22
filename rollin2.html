@@ -36,9 +36,7 @@
     </style>
 
 <script>
-  setTimeout(function(){
-   window.location.reload(1);
-}, 20000);
+  //setTimeout(function(){ window.location.reload(1); }, 20000);
 </script>    
   </head>
   <body>
@@ -203,10 +201,16 @@
 </main>
 <script>
   if ('loading' in HTMLIFrameElement.prototype) {
-    const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+	window.lazySizesConfig = window.lazySizesConfig || {};
+
+	lazySizesConfig.ricTimeout   = 1000;
+	lazySizesConfig.throttleDelay  = 200;
+
+	const iframes = document.querySelectorAll('iframe[loading="lazy"]');
 
     iframes.forEach(iframe => {
       iframe.src = iframe.dataset.src;
+
     });
 
   } else {
