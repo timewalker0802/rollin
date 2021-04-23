@@ -194,23 +194,21 @@
   </div>
 
 </main>
-	  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ==" crossorigin="anonymous"></script>
 <script>
-  if ('loading' in HTMLIFrameElement.prototype) {
+
+	window.lazySizesConfig = window.lazySizesConfig || {};
+
+	lazySizesConfig.ricTimeout   = 1000;
+	lazySizesConfig.throttleDelay  = 200;
 
 	const iframes = document.querySelectorAll('iframe[loading="lazy"]');
 
     iframes.forEach(iframe => {
       iframe.src = iframe.dataset.src;
+
     });
 
-  } else {
-    // Dynamically import the LazySizes library
-    const script = document.createElement('script');
-    script.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
-    document.body.appendChild(script);
-  }
 </script>
 </body>
 </html>
