@@ -194,5 +194,15 @@
   </div>
 
 </main>
+<script>
+window.lazySizesConfig = window.lazySizesConfig || {};
+lazySizesConfig.ricTimeout   = 1000;
+lazySizesConfig.throttleDelay  = 200;
+const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+iframes.forEach(iframe => {
+    iframe.src = iframe.dataset.src;
+});
+</script>
+  
 </body>
 </html>
